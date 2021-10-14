@@ -1,0 +1,28 @@
+@mixin Ycentered {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == iPhone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == iPad-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  @if $breakpoint == iPad-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } // 1200px
+  }
+  @if $breakpoint == MacPro {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } // 1800px
+  }
+}

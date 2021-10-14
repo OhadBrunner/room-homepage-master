@@ -1,0 +1,58 @@
+@import 'mixins';
+
+:root {
+  //COLORS
+  --color-bg: #eeeeee;
+  --color-white: #fff;
+  --color-paragraph: #9d9d9d;
+  --color-black: #000;
+}
+
+/* RESET */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*every element will automatically inherit the body's box-sizing*/
+}
+
+html {
+  /* font-size: 10px; /*instead of the deafault browser 16px --> now 1rem = 10px*/
+  font-size: 62.5%;
+  /* equals to 10px if setting are normal but will change according to users needs*/
+  @include respond(iPad-land) {
+    // width < 1200?
+    font-size: 56.25%;
+    // 1rem = 9px, 9/16 = 50%;
+  }
+  @include respond(iPad-port) {
+    // width < 900?
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%;
+  }
+  // @include respond(iPhone) {
+  //   // width < 600?
+  //   font-size: 30%;
+  // }
+  @include respond(MacPro) {
+    // width > 1800?
+    font-size: 75%; // 1rem = 12, 12/16
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: var(--color-bg);
+
+  @include respond(iPhone) {
+    padding: 0;
+  }
+}
+
+// ::selection {
+//   // applies to elemnts like test that have been highlighted
+//   background-color: $color-primary;
+//   color: $color-white;
+// }

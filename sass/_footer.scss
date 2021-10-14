@@ -1,0 +1,29 @@
+.footer {
+  background-color: var(--color-white);
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+
+  @include respond(iPhone) {
+    grid-template-columns: auto;
+    grid-template-rows: max-content 1fr min-content;
+  }
+
+  &__text {
+    background-color: var(--color-white);
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    @include respond(iPhone) {
+      padding: 8rem 6rem;
+    }
+  }
+
+  &__image {
+    @include respond(iPhone) {
+      width: 100%;
+    }
+  }
+}
